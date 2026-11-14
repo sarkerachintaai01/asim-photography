@@ -13,42 +13,72 @@
 <link rel="icon" href="/assets/logo.jpg">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Photographer","name":"Asim Photography","telephone":"+8801723515007","email":"asimphotography.khk@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Khoksa, Kushtia","addressCountry":"BD"},"sameAs":["https://www.facebook.com/asimphotography.khoksa","https://www.youtube.com/@AsimPhotography007"]}</script>
 <style>
-:root{--bg:#0a0a0a;--card:#151312;--gold:#d4a55a;--rose:#e0b4a0;--text:#f2ece4;--mute:#a89f94;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Georgia,"Noto Serif Bengali","Kalpurush","Nirmala UI",serif;line-height:1.65}
+:root{--bg:#0a0a0a;--card:#16130f;--gold:#d4a55a;--rose:#e0b4a0;--text:#f2ece4;--mute:#a89f94;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}
+html{background:#0a0a0a}body{margin:0;background:radial-gradient(ellipse at 50% 0,#2b1e0b 0,#0a0a0a 900px),#0a0a0a;color:var(--text);font-family:Georgia,"Noto Serif Bengali","Kalpurush","Nirmala UI",serif;line-height:1.65;overflow-x:hidden}
 a{color:inherit;text-decoration:none}img{max-width:100%}
-header{position:sticky;top:0;z-index:20;background:linear-gradient(90deg,#1a1206,#4a3512 50%,#1a1206);border-bottom:2px solid var(--gold);display:flex;align-items:center;justify-content:space-between;padding:8px 16px;gap:10px;flex-wrap:wrap}
+header{position:sticky;top:0;z-index:20;background:linear-gradient(90deg,#1a1206,#4a3512 50%,#1a1206);border-bottom:2px solid var(--gold);display:flex;align-items:center;justify-content:space-between;padding:8px 18px;gap:10px;flex-wrap:wrap}
 header img{height:56px;width:auto;border-radius:10px;border:2px solid var(--gold);background:#000;box-shadow:0 0 14px rgba(212,165,90,.6)}
-nav{display:flex;gap:16px;flex-wrap:wrap;font-size:15px}nav a:hover{color:var(--gold)}
-.lang{border:1px solid var(--gold);background:none;color:var(--gold);padding:6px 14px;border-radius:20px;cursor:pointer;font-size:13px}
-.hero img{width:100%;display:block}.cta{text-align:center;padding:22px 16px}
+nav{display:flex;gap:6px 22px;flex-wrap:wrap;font-size:22px;font-weight:bold}nav a:hover{color:var(--gold)}
+.lang{border:1px solid var(--gold);background:none;color:var(--gold);padding:7px 16px;border-radius:20px;cursor:pointer;font-size:15px}
+@media(max-width:700px){nav{font-size:18px;gap:4px 14px}}
+.hero img{width:100%;display:block}
 .btn{display:inline-block;background:linear-gradient(135deg,#e6bb72,#b9853a);color:#111;padding:12px 26px;border-radius:30px;font-weight:bold;margin:6px;border:0;cursor:pointer;font-family:inherit;font-size:16px}
 .btn.o{background:none;border:1px solid var(--gold);color:var(--gold)}
-section{padding:46px 16px;max-width:1080px;margin:auto}
-h2{color:var(--gold);text-align:center;font-weight:normal;letter-spacing:1px;margin:0 0 8px;font-size:28px}
-.sub{text-align:center;color:var(--mute);margin:0 0 26px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+section{padding:60px max(16px,calc((100% - 1200px)/2));border-top:1px solid rgba(212,165,90,.25)}
+#portfolio{background:radial-gradient(ellipse at 50% 0,rgba(212,165,90,.12),transparent 65%)}
+#offers{background:linear-gradient(180deg,#15100a,rgba(10,10,10,.2))}
+#about{background:radial-gradient(ellipse at 0 50%,rgba(212,165,90,.14),transparent 55%),radial-gradient(ellipse at 100% 50%,rgba(224,180,160,.08),transparent 55%)}
+#social{background:linear-gradient(180deg,rgba(10,10,10,.2),#15100a)}
+#book{background:linear-gradient(135deg,#2a1d0a,#0d0a06 50%,#2a1d0a);text-align:center;padding-top:44px;padding-bottom:44px}
+#book h3{margin:0 0 8px;color:var(--gold);font-size:26px;font-weight:normal}
+#contact{background:radial-gradient(ellipse at 50% 100%,rgba(212,165,90,.14),transparent 65%)}
+h2{text-align:center;font-size:36px;letter-spacing:2px;margin:0 0 10px;font-weight:bold;color:#e9c27f;-webkit-text-stroke:1.2px #6b4208;paint-order:stroke fill;text-shadow:1px 1px 0 #fff3d6,-1px -1px 1px #000,3px 4px 6px rgba(0,0,0,.9)}
+h2::after{content:"◆  ◆  ◆";display:block;font-size:11px;letter-spacing:6px;color:var(--gold);-webkit-text-stroke:0;text-shadow:none;margin-top:6px}
+.sub{text-align:center;color:var(--mute);margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
 .card{background:var(--card);border:1px solid #2a2318;border-radius:12px;padding:18px}
-.card h3{color:var(--rose);margin:6px 0}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:18px}
-.tabs button{background:none;border:1px solid #3a2d1a;color:var(--text);padding:7px 16px;border-radius:20px;cursor:pointer;font-family:inherit}
+.card h3{color:var(--rose);margin:10px 0 6px;font-size:22px}
+.film{padding:0;border:0;background:#050505;overflow:hidden;border-top:2px solid var(--gold);border-bottom:2px solid var(--gold)}
+.ft{display:flex;width:max-content;position:relative;padding:30px 0;background:#141210;animation:fs var(--d,40s) linear infinite}
+.ft:hover,.tk:hover{animation-play-state:paused}
+.ft::before,.ft::after{content:"";position:absolute;left:0;right:0;height:16px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='16'%3E%3Crect x='7' y='3' width='14' height='10' rx='3' fill='%23ece6d8'/%3E%3C/svg%3E") repeat-x}
+.ft::before{top:7px}.ft::after{bottom:7px}
+.ff{width:224px;flex:none;padding-right:12px}
+.ff img{width:212px;height:150px;object-fit:cover;display:block;border:2px solid #000;cursor:zoom-in;filter:contrast(1.05) saturate(1.05)}
+@keyframes fs{to{transform:translateX(-50%)}}
+.tick{overflow:hidden;background:linear-gradient(90deg,#1a1206,#3a2a10,#1a1206);border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);padding:14px 0}
+.tk{display:flex;width:max-content;animation:fs var(--d,40s) linear infinite}
+.tk span{font-size:28px;font-weight:bold;letter-spacing:2px;color:#f3d9a4;white-space:nowrap;padding:0 22px;text-shadow:0 2px 6px #000}
+.tk i{font-style:normal;color:var(--gold);font-size:20px;align-self:center}
+@media(max-width:700px){.tk span{font-size:21px}h2{font-size:30px}}
+@media(prefers-reduced-motion:reduce){.ft,.tk{animation:none}}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:20px}
+.tabs button{background:none;border:1px solid #3a2d1a;color:var(--text);padding:8px 18px;border-radius:20px;cursor:pointer;font-family:inherit;font-size:16px}
 .tabs button.on{background:var(--gold);color:#111}
 .gp{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;border:1px solid #3a2d1a;cursor:zoom-in;transition:transform .3s,box-shadow .3s;box-shadow:0 4px 18px rgba(0,0,0,.6)}
 .gp:hover{transform:scale(1.03);box-shadow:0 6px 26px rgba(212,165,90,.45)}
-.ob{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px}
-.price{color:var(--gold);font-size:24px;margin:6px 0}.price.q{font-size:16px;color:var(--mute)}
+.oc{position:relative;aspect-ratio:16/9;border-radius:8px;overflow:hidden;background:#000}
+.oc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s;cursor:zoom-in}.oc img.a{opacity:1}
+.oc button{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.55);color:#fff;border:0;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:20px}
+.oc .pv{left:8px}.oc .nx{right:8px}
+.price{color:var(--gold);font-size:26px;margin:6px 0}.price.q{font-size:17px;color:var(--mute)}
 .tag{background:#b9853a;color:#111;font-size:12px;padding:2px 10px;border-radius:10px;margin-left:6px;vertical-align:middle}
 .ph{padding:30px;text-align:center;color:var(--mute);grid-column:1/-1}
-.about{display:grid;grid-template-columns:minmax(0,260px) 1fr;gap:22px;align-items:center}
-@media(max-width:640px){.about{grid-template-columns:1fr}}
-.about img{width:100%;border-radius:12px;border:2px solid var(--gold)}
+.about{display:grid;grid-template-columns:minmax(0,360px) 1fr;gap:32px;align-items:center}
+.about img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;border:2px solid var(--gold);box-shadow:0 8px 30px rgba(0,0,0,.6)}
+.about p{font-size:24px;line-height:1.7;margin:0}
+@media(max-width:700px){.about{grid-template-columns:1fr}.about p{font-size:20px}}
 .yt{background:linear-gradient(135deg,#2a0d0d,#111)}.fb{background:linear-gradient(135deg,#0d1a2a,#111)}
-.ct{text-align:center}.ct p{margin:8px 0}
-iframe{width:100%;height:300px;border:0;border-radius:12px;margin-top:14px}
+.ct{text-align:center;max-width:720px;margin:auto;font-size:18px}.ct p{margin:8px 0}
+iframe{width:100%;height:320px;border:0;border-radius:12px;margin-top:14px}
 footer{text-align:center;color:var(--mute);padding:28px 16px 90px;border-top:1px solid #2a2318;font-size:14px}
 .wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));background:#25d366;color:#fff;border-radius:30px;padding:12px 18px;font-weight:bold;box-shadow:0 4px 14px rgba(0,0,0,.5);z-index:30}
-#lb{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:50;cursor:zoom-out}
-#lb img{max-width:96vw;max-height:92vh;border-radius:8px}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;z-index:50}
+#lb img{max-width:90vw;max-height:88vh;border-radius:8px}
+#lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:50%;width:52px;height:52px;font-size:30px;cursor:pointer}
+#lb .lp{left:14px;top:50%;transform:translateY(-50%)}#lb .ln{right:14px;top:50%;transform:translateY(-50%)}#lb .lx{right:14px;top:14px;width:44px;height:44px;font-size:24px}
+#lc{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:#ccc;font-size:14px}
 </style>
 </head>
 <body>
@@ -57,58 +87,89 @@ footer{text-align:center;color:var(--mute);padding:28px 16px 90px;border-top:1px
 <nav id="nav"></nav>
 <button class="lang" id="lb2"></button>
 </header>
-<div class="hero" id="home"><img id="heroimg" src="/assets/banner.jpg" alt="Asim Photography – Capturing Emotions Cinematically"><div class="cta" id="cta"></div></div>
-<section id="services"></section>
+<div class="hero" id="home"><img id="heroimg" src="/assets/banner.jpg" alt="Asim Photography – Capturing Emotions Cinematically"></div>
+<section class="film" id="film"></section>
 <section id="portfolio"></section>
 <section id="offers"></section>
 <section id="about"></section>
 <section id="social"></section>
+<section id="book"></section>
+<div class="tick" id="tick"></div>
 <section id="contact"></section>
 <footer id="foot"></footer>
 <a class="wa" id="wa" target="_blank" rel="noopener">WhatsApp</a>
-<div id="lb" onclick="this.style.display='none'"><img alt=""></div>
+<div id="lb"><button class="lx" aria-label="Close">✕</button><button class="lp" aria-label="Previous">‹</button><img alt=""><button class="ln" aria-label="Next">›</button><div id="lc"></div></div>
 <script>
-var L=localStorage.getItem("lang")||"bn",D=null,cur="all";
-var T={home:["হোম","Home"],portfolio:["পোর্টফোলিও","Portfolio"],offers:["হায়ার মি / অফার","Hire Me / Offers"],about:["আমার সম্পর্কে","About Me"],contact:["যোগাযোগ","Contact"],
-book:["বুক করুন","Book Now"],call:["কল করুন","Call Now"],wab:["WhatsApp-এ বুক করুন","Book on WhatsApp"],all:["সব","All"],
-sv:["আমাদের সেবা","Our Services"],tag:["আবেগকে ধরে রাখি সিনেমাটিক ঢঙে","Capturing Emotions Cinematically"],
-s1:["ওয়েডিং ফটোগ্রাফি","Wedding Photography"],s1d:["আপনার বিশেষ দিনের প্রতিটি মুহূর্ত।","Every moment of your special day."],
-s2:["সিনেমাটোগ্রাফি","Cinematography"],s2d:["সিনেমার মতো ভিডিও গল্প।","Video stories that feel like cinema."],
-s3:["ড্রোন সার্ভিস","Drone Service"],s3d:["আকাশ থেকে অসাধারণ দৃশ্য।","Stunning views from the sky."],
-pf:["আমার কাজ","My Work"],soon:["এই ক্যাটাগরিতে ছবি শীঘ্রই যোগ হবে","Photos coming soon in this category"],
-of:["বুকিং চলছে ২০২৬ — আপনার প্যাকেজ বেছে নিন","Booking Open 2026 — choose your package"],qp:["মূল্য জানতে যোগাযোগ করুন","Contact for price"],
+var L=localStorage.getItem("lang")||"bn",D=null,cur="all",LB={l:[],i:0};
+var T={home:["হোম","Home"],work:["আমার কাজ","My Work"],offers:["যোগাযোগ করুন / অফার","Contact / Offers"],about:["আমার সম্পর্কে","About Me"],contact:["যোগাযোগ","Contact"],
+book:["বুক করুন","Book Now"],call:["কল করুন","Call Now"],bt:["আপনার বিশেষ মুহূর্ত ধরে রাখতে আজই যোগাযোগ করুন","Contact us today to capture your special moments"],wab:["WhatsApp-এ বুক করুন","Book on WhatsApp"],all:["সব","All"],
+soon:["এই ক্যাটাগরিতে ছবি শীঘ্রই যোগ হবে","Photos coming soon in this category"],of:["বুকিং চলছে ২০২৬ — আপনার প্যাকেজ বেছে নিন","Booking Open 2026 — choose your package"],qp:["মূল্য জানতে যোগাযোগ করুন","Contact for price"],
 yt:["আমাদের ভিডিও ও সিনেমাটিক কাজ দেখুন","Watch our videos and cinematic work"],ytb:["YouTube চ্যানেল দেখুন","Visit YouTube Channel"],
 fb:["নতুন কাজ ও অফারের খবর পেতে","Get news of new work and offers"],fbb:["Facebook-এ ফলো করুন","Follow on Facebook"],rights:["সর্বস্বত্ব সংরক্ষিত","All rights reserved"]};
+var SV=[["ওয়েডিং ফটোগ্রাফি","Wedding Photography"],["সিনেমাটোগ্রাফি","Cinematography"],["ড্রোন সার্ভিস","Drone Service"],["ইভেন্ট ফটোগ্রাফি","Event Photography"],["পোর্ট্রেট ফটোগ্রাফি","Portrait Photography"],["প্রোডাক্ট ফটোগ্রাফি","Product Photography"]];
 function t(k){return T[k][L==="bn"?0:1]}
+function lab(k){var x=D.labels&&D.labels[k+"_"+L];return x||t(k)}
 function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;")}
 function pick(o,k){return o[k+"_"+L]||o[k+"_bn"]||""}
 function safeUrl(u){return /^https?:\/\//.test(u)?u:"#"}
-function draw(){
-  var S=D.site,wa="https://wa.me/"+String(S.whatsapp).replace(/\D/g,"");
-  document.documentElement.lang=L;
-  document.getElementById("lb2").textContent=L==="bn"?"English":"বাংলা";
-  document.getElementById("nav").innerHTML=[["home","home"],["portfolio","portfolio"],["offers","offers"],["about","about"],["contact","contact"]].map(function(a){return '<a href="#'+a[0]+'">'+t(a[1])+'</a>'}).join("");
-  document.getElementById("heroimg").src=D.hero.img||"/assets/banner.jpg";
-  document.getElementById("cta").innerHTML='<a class="btn" href="#offers">'+t("book")+'</a><a class="btn o" href="tel:'+esc(S.phone)+'">'+t("call")+': '+esc(S.phone)+'</a>';
-  document.getElementById("wa").href=wa;
-  document.getElementById("services").innerHTML='<h2>'+t("sv")+'</h2><p class="sub">'+t("tag")+'</p><div class="grid">'+[1,2,3].map(function(i){return '<div class="card"><h3>'+t("s"+i)+'</h3><p>'+t("s"+i+"d")+'</p></div>'}).join("")+'</div>';
-  var tabs='<button class="'+(cur==="all"?"on":"")+'" data-c="all">'+t("all")+'</button>'+D.cats.map(function(c){return '<button class="'+(cur===c.id?"on":"")+'" data-c="'+esc(c.id)+'">'+esc(pick(c,"")||c[L])+'</button>'}).join("");
-  var ph=D.photos.filter(function(p){return cur==="all"||p.cat===cur});
-  document.getElementById("portfolio").innerHTML='<h2>'+t("pf")+'</h2><p class="sub"></p><div class="tabs">'+tabs+'</div><div class="grid">'+(ph.length?ph.map(function(p){return '<img class="gp" loading="lazy" src="'+esc(p.src)+'" alt="Asim Photography">'}).join(""):'<div class="ph">'+t("soon")+'</div>')+'</div>';
-  var of=D.offers.filter(function(o){return !o.hidden});
-  document.getElementById("offers").innerHTML='<h2>'+t("offers")+'</h2><p class="sub">'+t("of")+'</p><div class="grid">'+of.map(function(o){
-    var tg=pick(o,"tag");
-    return '<div class="card">'+(o.img?'<img class="ob" loading="lazy" src="'+esc(o.img)+'" alt="'+esc(pick(o,"title"))+'">':'')+'<h3>'+esc(pick(o,"title"))+(tg?'<span class="tag">'+esc(tg)+'</span>':'')+'</h3>'+(o.hidePrice?'<div class="price q">'+t("qp")+'</div>':'<div class="price">'+esc(o.price)+'</div>')+'<p>'+esc(pick(o,"desc"))+'</p><a class="btn" target="_blank" rel="noopener" href="'+wa+'?text='+encodeURIComponent(pick(o,"title"))+'">'+t("wab")+'</a><a class="btn o" href="tel:'+esc(S.phone)+'">'+t("call")+'</a></div>'}).join("")+'</div>';
-  document.getElementById("about").innerHTML='<h2>'+t("about")+'</h2><p class="sub"></p><div class="about">'+(D.about.photo?'<img src="'+esc(D.about.photo)+'" alt="Asim">':'<span></span>')+'<div><p>'+esc(D.about[L]).replace(/\n/g,"<br>")+'</p></div></div>';
-  document.getElementById("social").innerHTML='<div class="grid"><div class="card yt"><h3>YouTube</h3><p>'+t("yt")+'</p><a class="btn" target="_blank" rel="noopener" href="'+esc(safeUrl(S.youtube))+'">'+t("ytb")+'</a></div><div class="card fb"><h3>Facebook</h3><p>'+t("fb")+'</p><a class="btn" target="_blank" rel="noopener" href="'+esc(safeUrl(S.facebook))+'">'+t("fbb")+'</a></div></div>';
-  document.getElementById("contact").innerHTML='<h2>'+t("contact")+'</h2><p class="sub"></p><div class="card ct"><p>📍 '+esc(L==="bn"?S.address_bn:S.address_en)+'</p><p>📞 <a href="tel:'+esc(S.phone)+'">'+esc(S.phone)+'</a></p><p>✉️ <a href="mailto:'+esc(S.email)+'">'+esc(S.email)+'</a></p><p><a class="btn" target="_blank" rel="noopener" href="'+wa+'">WhatsApp</a></p>'+(/^https:\/\/www\.google\.com\/maps\/embed/.test(S.map||"")?'<iframe loading="lazy" src="'+esc(S.map)+'" title="Map"></iframe>':'')+'</div>';
-  document.getElementById("foot").innerHTML='© 2026 Asim Photography — '+t("rights");
+function $(i){return document.getElementById(i)}
+function wa(){return "https://wa.me/"+String(D.site.whatsapp).replace(/\D/g,"")}
+function dHead(){
+  document.documentElement.lang=L;$("lb2").textContent=L==="bn"?"English":"বাংলা";
+  $("nav").innerHTML=["home","work","offers","about","contact"].map(function(k){return '<a href="#'+(k==="home"?"home":k==="work"?"portfolio":k)+'">'+esc(lab(k))+'</a>'}).join("");
+  $("heroimg").src=D.hero.img||"/assets/banner.jpg";$("wa").href=wa();
 }
+function dFilm(){
+  var n=D.photos.length,e=$("film");if(!n){e.style.display="none";return}e.style.display="";
+  var ix=[];while(ix.length<12)for(var i=0;i<n;i++)ix.push(i);
+  var one=ix.map(function(i){return '<div class="ff"><img loading="lazy" data-f="'+i+'" src="'+esc(D.photos[i].src)+'" alt="Asim Photography"></div>'}).join("");
+  e.innerHTML='<div class="ft" style="--d:'+(ix.length*4)+'s">'+one+one+'</div>';
+}
+function dTick(){
+  var s=(D.services&&D.services.length?D.services:SV.map(function(a){return{bn:a[0],en:a[1]}}));
+  var PAL=["#f5c26b","#ff8f7a","#7fd6c2","#c9a7ff","#8ec5ff","#ffd9a0","#f48fb1","#a5e07f"];var one=s.map(function(x,i){return '<span style="color:'+PAL[i%PAL.length]+'">'+esc(x[L]||x.bn)+'</span><i>✦</i>'}).join("");one=one+one;
+  $("tick").innerHTML='<div class="tk" style="--d:'+(s.length*8)+'s">'+one+one+'</div>';
+}
+function dGal(){
+  var tabs='<button class="'+(cur==="all"?"on":"")+'" data-c="all">'+t("all")+'</button>'+D.cats.map(function(c){return '<button class="'+(cur===c.id?"on":"")+'" data-c="'+esc(c.id)+'">'+esc(c[L]||c.bn)+'</button>'}).join("");
+  var ph=D.photos.filter(function(p){return cur==="all"||p.cat===cur});
+  $("portfolio").innerHTML='<h2>'+esc(lab("work"))+'</h2><p class="sub"></p><div class="tabs">'+tabs+'</div><div class="grid" id="gg">'+(ph.length?ph.map(function(p,i){return '<img class="gp" loading="lazy" data-g="'+i+'" src="'+esc(p.src)+'" alt="Asim Photography">'}).join(""):'<div class="ph">'+t("soon")+'</div>')+'</div>';
+}
+function imgsOf(o){return o.imgs&&o.imgs.length?o.imgs:(o.img?[o.img]:[])}
+function dOff(){
+  var S=D.site,of=D.offers.filter(function(o){return !o.hidden});
+  $("offers").innerHTML='<h2>'+esc(lab("offers"))+'</h2><p class="sub">'+t("of")+'</p><div class="grid">'+of.map(function(o,k){
+    var tg=pick(o,"tag"),im=imgsOf(o);
+    return '<div class="card">'+(im.length?'<div class="oc" data-o="'+D.offers.indexOf(o)+'" data-i="0">'+im.map(function(s,j){return '<img class="'+(j?"":"a")+'" loading="lazy" data-s="'+j+'" src="'+esc(s)+'" alt="'+esc(pick(o,"title"))+'">'}).join("")+(im.length>1?'<button class="pv" data-d="-1">‹</button><button class="nx" data-d="1">›</button>':'')+'</div>':'')+'<h3>'+esc(pick(o,"title"))+(tg?'<span class="tag">'+esc(tg)+'</span>':'')+'</h3>'+(o.hidePrice?'<div class="price q">'+t("qp")+'</div>':'<div class="price">'+esc(o.price)+'</div>')+'<p>'+esc(pick(o,"desc"))+'</p><a class="btn" target="_blank" rel="noopener" href="'+wa()+'?text='+encodeURIComponent(pick(o,"title"))+'">'+t("wab")+'</a><a class="btn o" href="tel:'+esc(S.phone)+'">'+t("call")+'</a></div>'}).join("")+'</div>';
+}
+function dRest(){
+  var S=D.site;
+  $("about").innerHTML='<h2>'+esc(lab("about"))+'</h2><p class="sub"></p><div class="about">'+(D.about.photo?'<img src="'+esc(D.about.photo)+'" alt="Asim">':'<span></span>')+'<div><p>'+esc(D.about[L]).replace(/\n/g,"<br>")+'</p></div></div>';
+  $("social").innerHTML='<div class="grid"><div class="card yt"><h3>YouTube</h3><p>'+t("yt")+'</p><a class="btn" target="_blank" rel="noopener" href="'+esc(safeUrl(S.youtube))+'">'+t("ytb")+'</a></div><div class="card fb"><h3>Facebook</h3><p>'+t("fb")+'</p><a class="btn" target="_blank" rel="noopener" href="'+esc(safeUrl(S.facebook))+'">'+t("fbb")+'</a></div></div>';
+  $("book").innerHTML='<h3>'+t("bt")+'</h3><a class="btn" href="#contact">'+t("book")+'</a><a class="btn o" href="tel:'+esc(S.phone)+'">'+t("call")+': '+esc(S.phone)+'</a>';
+  $("contact").innerHTML='<h2>'+esc(lab("contact"))+'</h2><p class="sub"></p><div class="card ct"><p>📍 '+esc(L==="bn"?S.address_bn:S.address_en)+'</p><p>📞 <a href="tel:'+esc(S.phone)+'">'+esc(S.phone)+'</a></p><p>✉️ <a href="mailto:'+esc(S.email)+'">'+esc(S.email)+'</a></p><p><a class="btn" target="_blank" rel="noopener" href="'+wa()+'">WhatsApp</a></p>'+(/^https:\/\/www\.google\.com\/maps\/embed/.test(S.map||"")?'<iframe loading="lazy" src="'+esc(S.map)+'" title="Map"></iframe>':'')+'</div>';
+  $("foot").innerHTML='© 2026 Asim Photography — '+t("rights");
+}
+function draw(){dHead();dFilm();dTick();dGal();dOff();dRest()}
+/* lightbox */
+function show(i){var n=LB.l.length;LB.i=(i+n)%n;var b=$("lb");b.querySelector("img").src=LB.l[LB.i];$("lc").textContent=(LB.i+1)+" / "+n;b.style.display="flex";var m=n>1?"":"none";b.querySelector(".lp").style.display=m;b.querySelector(".ln").style.display=m}
+function closeLb(){$("lb").style.display="none"}
+function open(list,i){LB.l=list;show(i)}
 document.addEventListener("click",function(e){
-  var c=e.target.closest(".tabs button");if(c){cur=c.getAttribute("data-c");draw();return}
-  if(e.target.classList.contains("gp")){var b=document.getElementById("lb");b.firstElementChild.src=e.target.src;b.style.display="flex"}
+  var x=e.target,c=x.closest(".tabs button");if(c){cur=c.getAttribute("data-c");dGal();return}
+  if(x.closest("#lb")){if(x.closest(".lp"))show(LB.i-1);else if(x.closest(".ln"))show(LB.i+1);else if(!x.matches("#lb>img"))closeLb();return}
+  if(x.dataset.g!==undefined){open([].map.call(document.querySelectorAll("#gg .gp"),function(a){return a.src}),+x.dataset.g);return}
+  if(x.dataset.f!==undefined){open(D.photos.map(function(p){return p.src}),+x.dataset.f);return}
+  var oc=x.closest(".oc");
+  if(oc){var im=[].slice.call(oc.querySelectorAll("img")),i=+oc.dataset.i;
+    if(x.dataset.d){go(oc,i+ +x.dataset.d)}else if(x.dataset.s!==undefined){open(im.map(function(a){return a.src}),i)}}
 });
-document.getElementById("lb2").onclick=function(){L=L==="bn"?"en":"bn";try{localStorage.setItem("lang",L)}catch(x){}draw()};
+function go(oc,j){var im=oc.querySelectorAll("img"),n=im.length;j=(j+n)%n;im[+oc.dataset.i].classList.remove("a");im[j].classList.add("a");oc.dataset.i=j}
+setInterval(function(){document.querySelectorAll(".oc").forEach(function(o){if(o.querySelectorAll("img").length>1&&!o.matches(":hover"))go(o,+o.dataset.i+1)})},4500);
+document.addEventListener("keydown",function(e){if($("lb").style.display!=="flex")return;if(e.key==="ArrowLeft")show(LB.i-1);else if(e.key==="ArrowRight")show(LB.i+1);else if(e.key==="Escape")closeLb()});
+var sx=0;$("lb").addEventListener("touchstart",function(e){sx=e.changedTouches[0].clientX},{passive:true});
+$("lb").addEventListener("touchend",function(e){var d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>50)show(LB.i+(d<0?1:-1))},{passive:true});
+$("lb2").onclick=function(){L=L==="bn"?"en":"bn";try{localStorage.setItem("lang",L)}catch(x){}draw()};
 function get(u){return fetch(u).then(function(r){if(!r.ok)throw 0;return r.json()})}
 get("/api/content").catch(function(){return get("/default.json")}).then(function(d){D=d;draw()});
 </script>

@@ -91,9 +91,12 @@
    "desc_en": "1 photographer, 6 hours, 200 edited photos",
    "tag_bn": "",
    "tag_en": "",
-   "img": "/assets/s1.jpg",
    "hidePrice": false,
-   "hidden": false
+   "hidden": false,
+   "imgs": [
+    "/assets/s1.jpg",
+    "/assets/s2.jpg"
+   ]
   },
   {
    "id": "o2",
@@ -104,9 +107,13 @@
    "desc_en": "Photo + cinematic video, full day",
    "tag_bn": "জনপ্রিয়",
    "tag_en": "Popular",
-   "img": "/assets/s2.jpg",
    "hidePrice": false,
-   "hidden": false
+   "hidden": false,
+   "imgs": [
+    "/assets/s2.jpg",
+    "/assets/s3.jpg",
+    "/assets/s1.jpg"
+   ]
   },
   {
    "id": "o3",
@@ -117,9 +124,50 @@
    "desc_en": "Photo, video and drone coverage",
    "tag_bn": "বিশেষ ছাড়",
    "tag_en": "Special offer",
-   "img": "/assets/s6.jpg",
    "hidePrice": false,
-   "hidden": false
+   "hidden": false,
+   "imgs": [
+    "/assets/s6.jpg",
+    "/assets/s5.jpg"
+   ]
+  }
+ ],
+ "labels": {
+  "home_bn": "হোম",
+  "home_en": "Home",
+  "work_bn": "আমার কাজ",
+  "work_en": "My Work",
+  "offers_bn": "যোগাযোগ করুন / অফার",
+  "offers_en": "Contact / Offers",
+  "about_bn": "আমার সম্পর্কে",
+  "about_en": "About Me",
+  "contact_bn": "যোগাযোগ",
+  "contact_en": "Contact"
+ },
+ "services": [
+  {
+   "bn": "ওয়েডিং ফটোগ্রাফি",
+   "en": "Wedding Photography"
+  },
+  {
+   "bn": "সিনেমাটোগ্রাফি",
+   "en": "Cinematography"
+  },
+  {
+   "bn": "ড্রোন সার্ভিস",
+   "en": "Drone Service"
+  },
+  {
+   "bn": "ইভেন্ট ফটোগ্রাফি",
+   "en": "Event Photography"
+  },
+  {
+   "bn": "পোর্ট্রেট ফটোগ্রাফি",
+   "en": "Portrait Photography"
+  },
+  {
+   "bn": "প্রোডাক্ট ফটোগ্রাফি",
+   "en": "Product Photography"
   }
  ]
 }
