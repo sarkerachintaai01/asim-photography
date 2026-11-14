@@ -1,0 +1,125 @@
+{
+ "site": {
+  "phone": "01723-515007",
+  "whatsapp": "8801723515007",
+  "email": "asimphotography.khk@gmail.com",
+  "address_bn": "খোকসা, কুষ্টিয়া, বাংলাদেশ",
+  "address_en": "Khoksa, Kushtia, Bangladesh",
+  "youtube": "https://www.youtube.com/@AsimPhotography007",
+  "facebook": "https://www.facebook.com/asimphotography.khoksa",
+  "map": ""
+ },
+ "hero": {
+  "img": "/assets/banner.jpg"
+ },
+ "about": {
+  "photo": "/assets/s3.jpg",
+  "bn": "আমি অসীম, খোকসা, কুষ্টিয়া থেকে কাজ করা একজন ফটোগ্রাফার। বিয়ে, ইভেন্ট, সিনেমাটোগ্রাফি ও ড্রোন ফটোগ্রাফির মাধ্যমে আপনার সুন্দর মুহূর্তগুলো সিনেমার মতো করে ধরে রাখাই আমার কাজ। (অ্যাডমিন প্যানেল থেকে এই লেখা নিজের মতো করে বদলে নিন।)",
+  "en": "I am Asim, a photographer based in Khoksa, Kushtia. I capture your beautiful moments cinematically through wedding, event, cinematography and drone photography. (Edit this text from the admin panel.)"
+ },
+ "cats": [
+  {
+   "id": "wedding",
+   "bn": "ওয়েডিং",
+   "en": "Wedding"
+  },
+  {
+   "id": "event",
+   "bn": "ইভেন্ট",
+   "en": "Event"
+  },
+  {
+   "id": "portrait",
+   "bn": "পোর্ট্রেট",
+   "en": "Portrait"
+  },
+  {
+   "id": "nature",
+   "bn": "নেচার",
+   "en": "Nature"
+  },
+  {
+   "id": "product",
+   "bn": "প্রোডাক্ট",
+   "en": "Product"
+  },
+  {
+   "id": "other",
+   "bn": "অন্যান্য",
+   "en": "Other"
+  }
+ ],
+ "photos": [
+  {
+   "id": "p1",
+   "cat": "wedding",
+   "src": "/assets/s1.jpg"
+  },
+  {
+   "id": "p2",
+   "cat": "wedding",
+   "src": "/assets/s2.jpg"
+  },
+  {
+   "id": "p3",
+   "cat": "portrait",
+   "src": "/assets/s3.jpg"
+  },
+  {
+   "id": "p4",
+   "cat": "portrait",
+   "src": "/assets/s4.jpg"
+  },
+  {
+   "id": "p5",
+   "cat": "nature",
+   "src": "/assets/s5.jpg"
+  },
+  {
+   "id": "p6",
+   "cat": "other",
+   "src": "/assets/s6.jpg"
+  }
+ ],
+ "offers": [
+  {
+   "id": "o1",
+   "title_bn": "সিলভার প্যাকেজ",
+   "title_en": "Silver Package",
+   "price": "৳ ১৫,০০০",
+   "desc_bn": "১ জন ফটোগ্রাফার, ৬ ঘণ্টা, ২০০ এডিট করা ছবি",
+   "desc_en": "1 photographer, 6 hours, 200 edited photos",
+   "tag_bn": "",
+   "tag_en": "",
+   "img": "/assets/s1.jpg",
+   "hidePrice": false,
+   "hidden": false
+  },
+  {
+   "id": "o2",
+   "title_bn": "গোল্ড প্যাকেজ",
+   "title_en": "Gold Package",
+   "price": "৳ ২৫,০০০",
+   "desc_bn": "ফটো + সিনেমাটিক ভিডিও, পুরো দিন",
+   "desc_en": "Photo + cinematic video, full day",
+   "tag_bn": "জনপ্রিয়",
+   "tag_en": "Popular",
+   "img": "/assets/s2.jpg",
+   "hidePrice": false,
+   "hidden": false
+  },
+  {
+   "id": "o3",
+   "title_bn": "প্রিমিয়াম + ড্রোন",
+   "title_en": "Premium + Drone",
+   "price": "৳ ৪০,০০০",
+   "desc_bn": "ফটো, ভিডিও ও ড্রোন কভারেজ",
+   "desc_en": "Photo, video and drone coverage",
+   "tag_bn": "বিশেষ ছাড়",
+   "tag_en": "Special offer",
+   "img": "/assets/s6.jpg",
+   "hidePrice": false,
+   "hidden": false
+  }
+ ]
+}

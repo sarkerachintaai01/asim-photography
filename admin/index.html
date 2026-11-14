@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="bn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>অ্যাডমিন প্যানেল – Asim Photography</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#101010;color:#f2ece4;font-family:"Noto Sans Bengali","Nirmala UI",Arial,sans-serif;line-height:1.5}
+.top{position:sticky;top:0;z-index:9;background:#2a1f0d;border-bottom:2px solid #d4a55a;padding:10px 14px;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.wrap{max-width:900px;margin:auto;padding:14px}
+.box{background:#181614;border:1px solid #3a2d1a;border-radius:12px;padding:16px;margin-bottom:16px}
+h2{margin:0 0 10px;color:#d4a55a;font-size:20px}h3{margin:0 0 6px;color:#e0b4a0;font-size:16px}
+label{display:block;font-size:13px;color:#a89f94;margin:8px 0 3px}
+input[type=text],input[type=password],textarea,select{width:100%;padding:9px;border-radius:8px;border:1px solid #4a3b22;background:#0c0b0a;color:#f2ece4;font:inherit}
+textarea{min-height:90px}
+button{background:#d4a55a;color:#111;border:0;border-radius:8px;padding:9px 16px;font:inherit;font-weight:bold;cursor:pointer}
+button.g{background:none;border:1px solid #d4a55a;color:#d4a55a}button.r{background:#a33;color:#fff}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.row>*{flex:1 1 140px}
+.g2{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.ph{border:1px solid #3a2d1a;border-radius:8px;padding:6px}.ph img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;display:block;margin-bottom:6px}
+.ph button{width:100%;padding:6px}.pv{max-width:240px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;display:block;margin-bottom:6px}
+.of{border:1px solid #3a2d1a;border-radius:10px;padding:12px;margin-bottom:12px}
+.ck{display:flex;gap:8px;align-items:center;margin:8px 0;font-size:15px;color:#f2ece4}.ck input{width:20px;height:20px}
+#msg{position:fixed;left:50%;transform:translateX(-50%);bottom:20px;background:#d4a55a;color:#111;padding:10px 20px;border-radius:20px;display:none;z-index:99;font-weight:bold}
+.hint{font-size:13px;color:#a89f94}
+</style></head><body>
+<div id="login" class="wrap"><div class="box"><h2>অ্যাডমিন লগইন</h2><label>পাসওয়ার্ড</label><input type="password" id="pw" onkeydown="if(event.key==='Enter')login()"><p><button onclick="login()">প্রবেশ করুন</button></p></div></div>
+<div id="app" style="display:none">
+<div class="top"><b>📸 অ্যাডমিন প্যানেল</b><div class="row" style="flex:0 0 auto"><button onclick="save()" style="flex:none">✔ সেভ করুন</button><a href="/" target="_blank"><button class="g" style="flex:none">সাইট দেখুন</button></a><button class="g" style="flex:none" onclick="logout()">লগআউট</button></div></div>
+<div class="wrap" id="body"></div></div>
+<div id="msg"></div>
+<script>
+var D,PW=sessionStorage.getItem("pw")||"";
+function $(i){return document.getElementById(i)}
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;")}
+function toast(m){var e=$("msg");e.textContent=m;e.style.display="block";setTimeout(function(){e.style.display="none"},2600)}
+function api(u,m,b){return fetch(u,{method:m,headers:{"X-Admin":PW,"Content-Type":"application/json"},body:b})}
+function login(){PW=$("pw").value||PW;api("/api/content","POST").then(function(r){if(!r.ok)throw 0;sessionStorage.setItem("pw",PW);start()}).catch(function(){toast("পাসওয়ার্ড ভুল অথবা সেটআপ সম্পূর্ণ হয়নি");})}
+function logout(){sessionStorage.removeItem("pw");location.reload()}
+function jget(u){return fetch(u).then(function(r){if(!r.ok)throw 0;return r.json()})}
+function start(){jget("/api/content").catch(function(){return jget("/default.json")}).then(function(d){D=d;$("login").style.display="none";$("app").style.display="block";draw()})}
+function save(){api("/api/content","PUT",JSON.stringify(D)).then(function(r){toast(r.ok?"✔ সেভ হয়েছে! সাইটে এখন নতুন তথ্য দেখা যাবে":"সেভ হয়নি — আবার লগইন করুন")})}
+function bind(p,v){var a=p.split("."),o=D;for(var i=0;i<a.length-1;i++)o=o[a[i]];o[a[a.length-1]]=v}
+function F(label,path,val,ta){return '<label>'+label+'</label>'+(ta?'<textarea oninput="bind(\''+path+'\',this.value)">'+esc(val)+'</textarea>':'<input type="text" value="'+esc(val)+'" oninput="bind(\''+path+'\',this.value)">')}
+function resize(file,cb){var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){var m=1400,s=Math.min(1,m/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=im.width*s;c.height=im.height*s;c.getContext("2d").drawImage(im,0,0,c.width,c.height);cb(c.toDataURL("image/jpeg",0.82))};im.src=r.result};r.readAsDataURL(file)}
+function up(files,done){var list=[].slice.call(files),n=0;if(!list.length)return;toast("আপলোড হচ্ছে… অপেক্ষা করুন");
+ list.forEach(function(f){resize(f,function(data){api("/api/img","POST",JSON.stringify({data:data})).then(function(r){return r.json()}).then(function(j){if(j.url)done(j.url);else toast("আপলোড হয়নি")}).catch(function(){toast("আপলোড হয়নি")}).then(function(){if(++n===list.length){draw();toast("আপলোড শেষ — এবার ‘সেভ করুন’ চাপুন")}})})})}
+function delImg(u){var m=/\/api\/img\?id=(\w+)/.exec(u||"");if(m)api("/api/img?id="+m[1],"DELETE")}
+function pickImg(path){var i=document.createElement("input");i.type="file";i.accept="image/*";i.onchange=function(){up(i.files,function(u){bind(path,u)})};i.click()}
+function addPhotos(){var i=document.createElement("input");i.type="file";i.accept="image/*";i.multiple=true;i.onchange=function(){up(i.files,function(u){D.photos.push({id:"p"+Date.now()+Math.floor(Math.random()*999),cat:$("pc").value,src:u})})};i.click()}
+function delPhoto(i){if(!confirm("এই ছবিটি মুছবেন?"))return;delImg(D.photos[i].src);D.photos.splice(i,1);draw()}
+function addCat(){var b=prompt("ক্যাটাগরির নাম (বাংলায়):"),e=b&&prompt("ক্যাটাগরির নাম (ইংরেজিতে):");if(b&&e){D.cats.push({id:"c"+Date.now(),bn:b,en:e});draw()}}
+function delCat(i){var c=D.cats[i];if(D.photos.some(function(p){return p.cat===c.id})){alert("এই ক্যাটাগরিতে ছবি আছে। আগে ছবিগুলো মুছুন।");return}if(confirm("ক্যাটাগরি মুছবেন?")){D.cats.splice(i,1);draw()}}
+function addOffer(){D.offers.push({id:"o"+Date.now(),title_bn:"নতুন প্যাকেজ",title_en:"New Package",price:"৳ ০",desc_bn:"",desc_en:"",tag_bn:"",tag_en:"",img:"",hidePrice:false,hidden:false});draw()}
+function delOffer(i){if(confirm("এই অফারটি সম্পূর্ণ মুছবেন? (শুধু লুকাতে চাইলে নিচের ‘সাইটে দেখাবেন না’ টিক দিন)")){delImg(D.offers[i].img);D.offers.splice(i,1);draw()}}
+function mv(i,d){var j=i+d;if(j<0||j>=D.offers.length)return;var t=D.offers[i];D.offers[i]=D.offers[j];D.offers[j]=t;draw()}
+function CK(path,label,v){return '<label class="ck"><input type="checkbox" '+(v?"checked":"")+' onchange="bind(\''+path+'\',this.checked)"> '+label+'</label>'}
+function draw(){var h="",S=D.site;
+h+='<div class="box"><h2>১. হোম পেজের ছবি</h2><img class="pv" style="max-width:100%" src="'+esc(D.hero.img)+'"><button onclick="pickImg(\'hero.img\')">ছবি বদলান</button> <p class="hint">বড় ব্যানার ছবি দিন (চওড়া ছবি ভালো)। ছবি বদলে ‘সেভ করুন’ চাপুন।</p></div>';
+h+='<div class="box"><h2>২. পোর্টফোলিও গ্যালারি</h2><h3>ক্যাটাগরি</h3><div class="row">'+D.cats.map(function(c,i){return '<div class="ph"><input type="text" value="'+esc(c.bn)+'" oninput="D.cats['+i+'].bn=this.value"><input type="text" value="'+esc(c.en)+'" oninput="D.cats['+i+'].en=this.value" style="margin-top:4px"><button class="r" onclick="delCat('+i+')" style="margin-top:4px">মুছুন</button></div>'}).join("")+'</div><p><button class="g" onclick="addCat()">+ নতুন ক্যাটাগরি</button></p><h3>নতুন ছবি আপলোড</h3><div class="row"><select id="pc">'+D.cats.map(function(c){return '<option value="'+esc(c.id)+'">'+esc(c.bn)+' / '+esc(c.en)+'</option>'}).join("")+'</select><button onclick="addPhotos()">+ ছবি বাছাই করে আপলোড</button></div><p class="hint">একসাথে অনেক ছবি বাছাই করা যায়। ছবি নিজে থেকেই ছোট ও দ্রুত লোডের উপযোগী হয়।</p><div class="g2">'+D.photos.map(function(p,i){return '<div class="ph"><img src="'+esc(p.src)+'"><select onchange="D.photos['+i+'].cat=this.value">'+D.cats.map(function(c){return '<option value="'+esc(c.id)+'" '+(c.id===p.cat?"selected":"")+'>'+esc(c.bn)+'</option>'}).join("")+'</select><button class="r" onclick="delPhoto('+i+')" style="margin-top:4px">মুছুন</button></div>'}).join("")+'</div></div>';
+h+='<div class="box"><h2>৩. অফার / প্যাকেজ</h2>'+D.offers.map(function(o,i){var p="offers."+i+".";return '<div class="of"><h3>প্যাকেজ '+(i+1)+'</h3>'+(o.img?'<img class="pv" src="'+esc(o.img)+'">':'')+'<button class="g" onclick="pickImg(\''+p+'img\')">অফার ব্যানার/ছবি বদলান</button>'+'<div class="row"><div>'+F("প্যাকেজের নাম (বাংলা)",p+"title_bn",o.title_bn)+'</div><div>'+F("Package name (English)",p+"title_en",o.title_en)+'</div></div>'+F("দাম (যেমন ৳ ২৫,০০০)",p+"price",o.price)+'<div class="row"><div>'+F("বিবরণ (বাংলা)",p+"desc_bn",o.desc_bn,1)+'</div><div>'+F("Details (English)",p+"desc_en",o.desc_en,1)+'</div></div><div class="row"><div>'+F("ছোট ট্যাগ (বাংলা) যেমন: বিশেষ ছাড়",p+"tag_bn",o.tag_bn)+'</div><div>'+F("Tag (English) e.g. Special offer",p+"tag_en",o.tag_en)+'</div></div>'+CK(p+"hidePrice","দাম লুকান (‘মূল্য জানতে যোগাযোগ করুন’ লেখা দেখাবে)",o.hidePrice)+CK(p+"hidden","এই প্যাকেজ সাইটে দেখাবেন না",o.hidden)+'<div class="row" style="flex-wrap:wrap"><button class="g" onclick="mv('+i+',-1)">↑ উপরে</button><button class="g" onclick="mv('+i+',1)">↓ নিচে</button><button class="r" onclick="delOffer('+i+')">মুছুন</button></div></div>'}).join("")+'<button onclick="addOffer()">+ নতুন অফার</button></div>';
+h+='<div class="box"><h2>৪. আমার সম্পর্কে</h2>'+(D.about.photo?'<img class="pv" style="max-width:200px;aspect-ratio:1" src="'+esc(D.about.photo)+'">':'')+'<button class="g" onclick="pickImg(\'about.photo\')">প্রোফাইল ছবি বদলান</button>'+F("বাংলা লেখা","about.bn",D.about.bn,1)+F("English text","about.en",D.about.en,1)+'</div>';
+h+='<div class="box"><h2>৫. যোগাযোগের তথ্য ও লিংক</h2>'+F("মোবাইল নম্বর","site.phone",S.phone)+F("WhatsApp নম্বর (দেশের কোডসহ, শুধু সংখ্যা: 8801723515007)","site.whatsapp",S.whatsapp)+F("ইমেইল","site.email",S.email)+F("ঠিকানা (বাংলা)","site.address_bn",S.address_bn)+F("Address (English)","site.address_en",S.address_en)+F("YouTube লিংক","site.youtube",S.youtube)+F("Facebook লিংক","site.facebook",S.facebook)+F("Google Maps এম্বেড লিংক (পরে যোগ করা যাবে — https://www.google.com/maps/embed… দিয়ে শুরু)","site.map",S.map)+'</div>';
+h+='<p><button onclick="save()" style="width:100%;padding:14px">✔ সব পরিবর্তন সেভ করুন</button></p>';
+$("body").innerHTML=h}
+if(PW)api("/api/content","POST").then(function(r){if(r.ok)start()});
+</script></body></html>
